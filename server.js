@@ -16,7 +16,7 @@ app.get('/api/v1/post', async (req,res,next) => {
     const posts = await Post.find().sort({createdAt : -1});
     res.status(200).json({
         "data" : posts,
-        "message" : "Success Hello" 
+        "message" : "Success Hello Panda" 
     })
 });
 app.get('/api/v1/post/:id', async (req,res,next) => {
