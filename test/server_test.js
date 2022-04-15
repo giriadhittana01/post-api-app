@@ -6,9 +6,9 @@ dotenv.config();
 chai.should();
 
 chai.use(chaiHttp);
-// const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 // const IP =  process.env.IP || 'localhost';
-const address =  'https://web-post-api.herokuapp.com';
+// const address =  'https://web-post-api.herokuapp.com';
 describe('Test GET posts', () => {
     describe("GET /api/v1/post", () => {
         it("GET posts", (done) => {
