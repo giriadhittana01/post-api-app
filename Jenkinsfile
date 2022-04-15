@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('Build') {
                 steps {
-                    nodejs(nodeJSInstallationName: 'nodeJS v16.14.0') {
+                    nodejs(nodeJSInstallationName: 'NodeJS v16.14.0') {
                         sh 'npm install'
                     }
                 }
             }
         stage('Test') {
             steps {
-                nodejs(nodeJSInstallationName: 'nodeJS v16.14.0') {
+                nodejs(nodeJSInstallationName: 'NodeJS v16.14.0') {
                     sh 'npm test'
                 }
             }
