@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 withCredentials([string(credentialsId: 'heroku-token', variable: 'TOKEN')]) {
-                    sh 'git push https://:${TOKEN}@git.heroku.com/web-post-api.git HEAD:master'
+                    sh 'git push https://:${TOKEN}@git.heroku.com/post-api-app/.git HEAD:master'
                 }
             }
         }
