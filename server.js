@@ -11,12 +11,31 @@ app.use(bodyParser.json({limit:"30mb",extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
 app.use(express.json());
+app.use(function (req, res, next) {
+
+    var authorised = false;
+    //Here you would check for the user being authenticated
+  
+    //Unsure how you're actually checking this, so some psuedo code below
+    if (authorised) {
+      //Stop the user progressing any further
+      return res.status(403).send("Unauthorised!");
+    }
+    else {
+        console.log(`${req.method}: ${req.url} - ${new Date()}`)
+        setTimeout(() => {
+            next();
+        }, 2000);
+      //Carry on with the request chain
+    }
+});
+
 
 app.get('/api/v1/post', async (req,res,next) => {
     const posts = await Post.find().sort({createdAt : -1});
     res.status(200).json({
         "data" : posts,
-        "message" : "Success Giri Putra Adhittana" 
+        "message" : "Success" 
     })
 });
 app.get('/api/v1/post/:id', async (req,res,next) => {
