@@ -23,9 +23,9 @@ app.use(function (req, res, next) {
     }
     else {
         console.log(`${req.method}: ${req.url} - ${new Date()}`)
-        setTimeout(() => {
+//         setTimeout(() => {
             next();
-        }, 2000);
+//         }, 2000);
       //Carry on with the request chain
     }
 });
