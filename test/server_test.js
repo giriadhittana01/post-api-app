@@ -18,9 +18,9 @@ describe('Test GET posts', () => {
                 .end((err, response) => {
                     response.should.have.status(200);
                     response.body.should.be.a('object');
-                    done();
                 });
-        });
+                done();
+            });
     });
 
 });
